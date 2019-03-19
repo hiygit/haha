@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload=function () {
+				var oText=document.getElementById('text');
+				var oBtn1=document.getElementById('btn1');
+				var oBtn2=document.getElementById('btn2');
+				
+				oBtn1.onclick=function () {
+					alert(oText.value);
+					oText.value=''
+				}
+			}
+		</script>
+		<!--开发的时候用未压缩的，上线的时候用压缩的-->
+		<script src="../js/jquery.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			//1、绑定文档加载监听
+			$(function () {
+				//2、调用点击事件
+				$('#btn2').click(function () {
+					var aaa=$('#text').val();
+					alert(aaa)
+					$('#text').val('')
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<input type="text" id="text" value="" />
+		<input type="button" id="btn1" value="原生JS" />
+		<input type="button" id="btn2" value="原生jQuery" />
+	</body>
+</html>

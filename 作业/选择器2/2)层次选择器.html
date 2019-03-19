@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>层次选择器</title>
+	</head>
+
+	<body>
+		<div> <span>第一代 1 </span> <span>第一代 2</span>
+			<p> <span>第二代 1</span> </p>
+		</div>
+		<div class="item"></div>
+		<div>+兄弟元素 1</div>
+		<div>+兄弟元素 2</div>
+		<div id="item"></div>
+		<div>~ 所有兄弟元素 1</div>
+		<div>~ 所有兄弟元素 2</div>
+		<div>~ 所有兄弟元素 3</div>
+		<div class="inside"></div>
+		<p> nextAll() 1 </p> <span> nextAll() 2</span>
+
+		<script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(function() { // 将div下的第一代span字体设置为红色 
+				// > 
+				$("div > span").css("color","red"); 
+				// 选取class 为 item 的下一个 div兄弟元素
+				// + 
+				$(".item + div").css("color","red") 
+				$(".item + div").next("div").css("color","green"); 
+				// 选取...之后所有兄弟元素
+				// ~ 
+				$("#item ~ div").css("color","blue"); 
+				//nextAll() 
+				$(".inside").nextAll().css("color","red"); })
+		</script>
+
+	</body>
+
+</html>

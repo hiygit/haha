@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title></title>
+	</head>
+
+	<body>
+		<dl> <dt>技术</dt>
+			<dd>Jquery,Jsp,sql</dd> <dt>游戏</dt>
+			<dd>LoL,CF</dd> <dt>电影</dt>
+			<dd>av,gv</dd> <dt>其他</dt>
+			<dd></dd>
+		</dl>
+		<div>
+			<h2> A <span>B</span> </h2> </div>
+		<ul>
+			<ol></ol>
+			<ol>A</ol>
+			<ol></ol>
+			<ol>B</ol>
+		</ul>
+		
+		<script src="../../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){ 
+				// dd元素中包含'Jquery'字符串的文本会变色 
+				$("dd:contains('Jquery')").css("color","blue"); 
+				$("dd:empty").html("没有内容"); 
+				// 拥有匹配选择器的元素
+				$("div:has(span)").css("border","1px solid red"); 
+				// 选取为其他元素的父元素或包含文本的元素
+				$("ul ol:parent").css("border","1px solid blue");
+				
+				})
+
+		</script>
+	</body>
+
+</html>

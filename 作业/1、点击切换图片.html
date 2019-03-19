@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 50;
+				
+			}
+			div{
+				width: 300px;
+				height: 200px;
+				overflow: hidden;
+				border: 1px solid black;
+			}
+			
+			img{
+				width: 300px;
+				height: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1">
+			<img id="img" src="img/about_01.png"/>
+			<!--<img src="img/about_02.png"/>
+			<img src="img/about_03.png"/>-->
+		</div>
+		
+		<script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+//		var isShow=false;
+//		$('.box1').click(function () {
+//			if (isShow) {
+//				isShow=false;
+//				$('#pic1').hide()
+//			} else{
+//				isShow=true;
+//				$('#pic1').show()
+//			}
+//		})
+//			$('img').each(function () {
+//				$(this).click(function () {
+//					$(this).toggle()
+//				})
+//			})
+
+			$('#img').toggle(
+				function () {
+					this.src="img/about_02.png"
+				},
+				function () {
+					this.src="img/about_03.png"
+				},
+				function () {
+					this.src="img/about_04.png"
+				}
+			)
+		</script>
+		
+		
+	</body>
+</html>

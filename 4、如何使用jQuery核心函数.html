@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--1、作为函数来用
+			（1）.参数为函数的情况：当Dom加载完成后，执行此函数
+			（2）.参数作为选择器：查找所有匹配的标签，并将它们封装成jQuery对象
+			（3）.参数为Dom对象：将Dom对象封装成jQuery对象
+			（4）.参数作为Html对象  标签字符串（几乎不用）：Html对象  标签字符串封装成jQuery对象
+		2、作为对象用：$xxx()
+			（1）$.each(): 隐式遍历数组
+			（2）$trim(): 去除两端的空格-->
+		
+		
+		<div>
+			<button id="btn" type="button">测试</button><br />
+			<input type="text" name="msg1" /><br />
+			<input type="text" name="msg2" /><br />
+		</div>
+		
+		<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function () { //1
+				$('#btn').click(function () { //2
+					alert(this.innerHTML)   //不提倡这种写法      this指的是一个Dom元素
+					//html()
+//					alert($(this).html()) //3
+					$('<input type="text" name="msg3" /><br />').appendTo('div') //4
+				})
+			})
+			
+			//遍历输出数字中所有的元素值
+			var arr=[1,2,3]
+			$.each(arr, function(index,item) {   //index指的是索引 下标     item是元素值1,2,3
+				console.log(index,item)
+			});
+//			//去掉  字符串两端的空格
+			var str=' my jQuery '
+//			console.log(str.trim())
+			console.log($.trim(str))
+		</script>
+	</body>
+</html>

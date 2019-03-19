@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>过滤选择器 - 1</title>
+	</head>
+
+	<body> <span>过滤选择器 first </span> <span>过滤选择器 2 </span> <span>过滤器 last</span>
+		<div class="wrap">not 1</div>
+		<!-- 这个div会被选择器得到 -->
+		<div> not 2
+			<div class="wrap">not 3</div>
+		</div>
+		<table>
+			<tr>
+				<td>0</td>
+			</tr>
+			<tr>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>3</td>
+			</tr>
+		</table>
+		<ul>
+			<li>a</li>
+			<li>b</li>
+			<li>c</li>
+			<li>d</li>
+			<li>e</li>
+		</ul>
+		<h1>h1</h1>
+		<h2>h2</h2>
+		<h3>h3</h3>
+		<h4>h4</h4>
+		<h5>h5</h5>
+		<H6>h6</H6>
+		
+		<script src="../../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){ 
+				// 取第一个和最后一个选择器 
+				$("span:first").css("color","red"); 
+				$("span:last").css("color","blue"); 
+				// 非元素 
+				// not
+				$("div:not(.wrap)").css("color","green"); 
+				// even -> 偶数 
+				// odd -> 奇数 
+				$("tr:even").css("background","yellow"); 
+				$("tr:odd").css("background","blue"); 
+				// 取指定索引 
+				$("tr:eq(0)").css("color","red");
+				// 大于或小于 索引 
+				$("ul li:gt(2)").css("color","blue"); 
+				$("ul li:lt(2)").css("color","yellow"); 
+				// header 标题
+				$(":header").css("background","green"); })
+
+		</script>
+	</body>
+
+</html>

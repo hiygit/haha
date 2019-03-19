@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<title>属性过滤选择器</title>
+	</head>
+
+	<body>
+		<ul>
+			<li><a href="#" title="DOM对象和jquery对象" class="item">DOM对象和jquery对象</a></li>
+			<li><a href="#" title="jquery选择器大全" class="selected">jquery选择器大全</a></li>
+			<li><a href="#" title="jquery事件大全" class="item">jquery事件大全</a></li>
+			<li><a href="#" class="item">其他</a></li> 
+			<a href="#" title="jQuery事件大全" class="item">jQuery事件大全</a> 
+		</ul>
+		
+		<script src="../../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(function() { 
+				// 有title属性的 a标签会 消除下划线 
+				$("a[title]").css("text-decoration","none"); 
+				// = 
+				// != 
+				// ^= 以 value 开始
+				// $= 以 value 结束 
+				// *= 包含 value 
+				$("a[class=item]").css("color","pink"); 
+				$("a[class!=item]").css("color","orange"); 
+				$("a[title ^= DOM]").css("background","black"); 
+				$("a[title $= 事件大全]").css("background","green"); 
+				$("a[title *= jquery]").css("font-size","24px"); 
+				$("a[title ^= jQuery][class=item]").hide(); 
+			});
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		为什么jQuery可以链式调用？且举例说明===》11.19 为什么能链式调用
+		链式操作仅仅是通过对象上的方法最后return this 之后再把对象再返回回来
+		
+		<script type="text/javascript">
+			//定义一个JS类
+			function Demo(){
+			//拓展他的prototype
+			}
+			Demo.prototype={
+				setName:function (name) {
+					this.name=name;
+					return this;
+				},
+				getName:function(){
+					return this.name
+				}
+			}
+			//工厂函数
+			function D () {
+				return new Demo()
+			}
+			console.log(D().setName('lvv').getName())
+		</script>
+	</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<title>子元素过滤选择器</title>
+	</head>
+
+	<body>
+		<div>123
+			<div>456
+				<div>
+					<div>!@#</div>
+				</div>
+			</div>
+			<div>adc</div>
+			<div>def</div>
+		</div>
+		<table>
+			<tr>
+				<td>1.2008北京奥运会</td>
+			</tr>
+			<tr>
+				<td>2.2012伦敦奥运会</td>
+			</tr>
+			<tr>
+				<td>3.2016巴西奥运会</td>
+			</tr>
+			<tr>
+				<td>4.2020东京奥运会</td>
+			</tr>
+		</table>
+		
+		<script src="../../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				alert($("div:first-child").length);
+				alert($("div:last-child").length); 
+				// 父元素下的第一个子元素 并且是div 集合
+				$("div:first-child").each(function() { alert($(this).html()); }) 
+				// 父元素下的最后一个元素 并且是div 集合 
+				$("div:last-child").each(function() { alert($(this).html()); }) 
+				// 当某个元素只有一个子元素 only-child 
+				$("div:only-child").css("border","1px solid pink").css("width","200px"); 
+				// 从 1 开始， 偶数
+				$("tr:nth-child(even)").css("background","orange");
+				// 奇数 
+				$("tr:nth-child(2n+1)").css("background","pink"); });
+		</script>
+		<div>
+			<div>1</div>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+//			1、基本选择器：
+			$(document).ready(function(){ //id选择器返回的是一个元素(特殊) 
+				$("#one").css("background","red"); //类选择器返回的一个集合 
+				$(".one").css("background","yellow"); //element 选择器 
+				$("p").css("font-size","22px"); // * 选择器 // 将所有字体颜色设置成蓝色 
+				$("*").css("color","blue"); //并列选择器 
+				$("p, div").css("margin","0px"); 
+			})
+		</script>
+
+	</body>
+</html>

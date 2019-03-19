@@ -1,0 +1,52 @@
+1、为什么jQuery可以链式调用？且举例说明===》11.19 为什么能链式调用
+	链式操作仅仅是通过对象上的方法最后return this 之后再把对象再返回回来
+	例：<script type="text/javascript">
+			//定义一个JS类
+			function Demo(){
+			//拓展他的prototype
+			}
+			Demo.prototy={
+				setName:function (name) {
+					this.name=name
+					return this.name
+				}
+			}
+			//工厂函数
+			function D () {
+				return new Demo()
+			}
+			console.log(D().setName('lvv').getName())
+		</script>
+	
+jQuery的特点：链式调用、隐式遍历、读写合一
+隐式遍历：click each find next child add prevent
+版本：
+1.x  ---兼容老版本IE，文件更大
+2.x  ---部分IE8及其以下不支持，文件小，执行效率更高
+3.x  ---完全不支持IE8及以下版本，提供了一些新的API
+
+1.jQuery核心函数 ($/jQuery)
+2.jQuery核心对象 :执行jQuery核心函数返回的就是jQuery对象
+
+window.onload 与jQuery中的 document.ready()有什么区别？
+1、执行时间：
+	window.onload必须等到页面加载完成，包括图片等所有元素加载完成之后才执行
+	document.ready()：在Dom结构加载完成之后执行，其中不包括图片
+2、编写个数：
+	document.ready()：可以写多个，并且每个都执行
+	window.onload：只能写一个，重复会覆盖
+3、简化写法：
+	window.onload：没有简化写法
+	document.ready()：可以简化为$(function(){})
+4、浏览器兼容性:
+	二者都兼容，但是document.ready()只能出现在jQuery库中
+5、出现地方：
+	js脚本语言， window.onload可以出现在任何JS脚本文件中
+	document.ready() 只能出现在jQuery库中
+
+return continue break后面不能换行
+
+
+1、复习 预习选择器 ：基本  过滤   表单   层次
+2、用js和jQuery的方法写点击切换效果
+3、点击切换文本效果

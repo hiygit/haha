@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		1、基本选择器：
+			$('#id')   id选择器
+			$('div')   元素选择器
+			$('class')   类选择器
+			$('.class , .info , #id')     组合选择器，选择类名为class、info和  id名为id的所有元素
+			
+		2、层次选择器：
+			$('div>p')     选取div下的直接子代元素 p
+			$('div p')     选取div下的所有子代p元素 
+			$('div+p')     选取div后面紧邻的一个p元素，div和 p 必须是同一个父级元素 
+			$('div~p')     选取div同级的所有的p元素， div和 p 必须是同一个父级元素 
+			
+		3、过滤选择器：
+			3.1 基础过滤选择器：$('li:first-child')    选取第一个li元素
+						  $('li:last-child')     选取最后一个li元素
+						  $('li:nth-child(n)')    选取n个元素
+						  $('li:even')    选取下标为偶数的li元素
+						  $('li:odd')    选取下标为奇数的li元素  ，从0开始
+						  $('li:eq(4)')    选取下标为4的li元素,其中下标从0开始记
+						  $('li:gt(4)')    选取下标大于4的li元素
+						  $('li:lt(4)')    选取下标小于4的li元素
+						  $(':header')	         标题标签
+						  $('li:not(#name)')    选取id值不为name的li元素
+			3.2 内容过滤选择器：$('div:contains("jQuery")')	获取包含jQuery文本的div元素
+						  $('div:empty')	获取没有子元素或文本的空div元素
+						  $('div parent')	含有子元素或文本元素的div元素
+						  $('div:has(selector)')	含有某个选择器的元素
+			3.3 可见性过滤选择器：$('li:hidden')		匹配所有不可见的li元素
+						   $('li:visible')		匹配所有可见的li元素
+			3.4 属性选择器：$('div[id]')   含有id属性的div元素
+					   $('div[id="name"]')    	id属性为name的div元素
+					   $('div[id!='name']')		id属性不为name的div元素
+					   $('div[id^='nav']')		以nav开头的id属性的div元素
+					   $('div[id$="idx"]')		以idx结尾的id属性的div元素
+					   $('div[id][name="nav-bar"]')		多属性过滤，含有id属性  且name属性为nav-bar的div元素
+			3.5 状态选择器：$('input:enabled')		获取到可编辑的input
+					   $('input:disabled')		获取到禁用的input
+					   $('input:checked')		获取到选中的input元素
+					   $('input:focus') / $('input').focus()	获取焦点元素
+					   $('option:selected')		获取到被选中的option元素
+		4、表单选择器：
+			$(':input')		获取到所有可编辑的元素  input textarea select button元素等
+			$('input:text')		获取到所有的单行文本元素  等效于$("input[type=text]"),但是执行效率要高于[type=text]
+			$('input:radio')	获取到所有的单选框
+			$('input:checkbox')	获取到所有的复选框
+			$('input:password')	获取到所有的密码框
+					   
+					   

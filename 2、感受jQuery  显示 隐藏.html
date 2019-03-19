@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>显示 隐藏</title>
+		<style type="text/css">
+			*{
+				margin: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--显示 隐藏-->
+		<input type="button" id="" value="点击" /><br />
+		<input type="text" id="" value="" placeholder="点击搜索"/>
+		
+		<script src="../js/jquery.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			//方法1 原生JS
+//			var oBtn=document.getElementsByTagName('input')[0];
+//			var oIpt=document.getElementsByTagName('input')[1];
+//			oBtn.onclick=function () {
+//				if (oIpt.style.display=='block') {
+//					oIpt.style.display='none'
+//				} else{
+//					oIpt.style.display='block'
+//				}
+//			}
+			//方法2  布尔值
+			var isShow=false;
+			$('input:first').click(function () {
+				if (isShow) {
+					isShow=false;
+//				$('input:last').css('display','none');
+					$('input:last').hide(1000)  //设置时间
+				} else{
+					isShow=true;
+					$('input:last').show(1000)
+				}
+			})
+			
+			//方法3 is()===>是用于查看选择的元素是不是匹配选择器
+//			$('input:first').click(function () {
+//				if ($('input:last').is(':hidden')) {     //判断是不是隐藏？
+//					$('input:last').show()
+//				} else{
+//					$('input:last').hide()
+//				}
+//			})
+			
+			//方法4
+//			$('input:first').click(function () {
+//				$('input:last').toggle()    //toggle已经封装好了show() 和  hide()
+//			})
+		</script>
+	</body>
+</html>

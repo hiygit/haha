@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h4>jQuery1</h4>
+		<p>jQueryjQueryjQueryjQueryjQueryjQueryjQueryjQuery
+		jQueryjQueryjQueryjQueryjQueryjQueryjQueryjQuery</p>
+		<h4>jQuery2</h4>
+		<p>jQueryjQueryjQueryjQueryjQueryjQueryjQueryjQuery</p>
+		
+		<script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		
+//			$('h4:eq(0)').click(function () {
+//				$('p:eq(0)').toggle(2000)
+//				
+////				$('p').show(1000)
+////				$('p').hide(1000)
+//			})
+//			$('h4:eq(1)').click(function () {
+//				$('p:eq(1)').toggle(2000)
+//				
+////				$('p').show(1000)
+////				$('p').hide(1000)
+//			})
+
+//
+			$('h4:eq(0)').click(function () {
+				$('p:eq(0)').css('width','800')
+//				
+				$('p:eq(0)').hide(2000)
+				$('p:eq(0)').show(2000)
+			})
+			$('h4:eq(1)').click(function () {
+				$('p:eq(1)').css('width','700')
+//				
+				$('p:eq(1)').hide(2000)
+				$('p:eq(1)').show(2000)
+			})
+		</script>
+	</body>
+</html>

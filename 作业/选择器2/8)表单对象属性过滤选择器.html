@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<title>表单对象属性过滤选择器</title>
+	</head>
+
+	<body>
+		<div> <input type="text" value="可用的文本框" /> </div>
+		<div> <input type="text" disabled="disabled" value="不可用的文本框" /> </div>
+		<div> <textarea disabled="disabled">不可用的文本域</textarea> </div>
+		<div> <select disabled="disabled"> <option>English</option> <option>简体中文</option> </select> </div>
+		<div> <input type="checkbox" checked value="xz" />选择 <input type="checkbox" value="wxz" />未选择 </div>
+		<div> <input type="radio" checked value="wq" />外企 <input type="radio" checked value="gq" />国企 <input type="radio" value="mq" />民企 </div>
+		
+		<script src="../../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(function() { 
+				// 可用不可用属性 
+				$(":enabled").css("border","1px solid pink"); 
+				$(":disabled").css("border","1px solid orange"); 
+				// 选中的单选框或复选框元素或下拉框
+				$(":checked").css("background","green").each(function() { 
+					alert($(this).val()); }) 
+			});
+		</script>
+	</body>
+
+</html>

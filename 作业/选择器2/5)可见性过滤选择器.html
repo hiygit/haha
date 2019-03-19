@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<title>可见性选择器</title>
+		<style type="text/css">
+			div {
+				margin: 10px;
+				width: 200px;
+				height: 40px;
+				border: 1px solid #ff0000;
+				display: block;
+			}
+			
+			.hid-1 {
+				display: nome;
+			}
+			
+			.hid-2 {
+				visibility: hidden;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="hid-1">display:none</div>
+		<div class="hid-2">visibility:hidden</div> <input type="hidden" value="Hello Jquery!" />
+		<div> jquery选择器大全 </div>
+		
+		<script src="../../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(function() { 
+				// Jquery 1.3.2之后 :hidden 选择器仅匹配display:none 或 <input type='hidden'/>元素（隐藏并且不占空间） 
+				// visibility: hidden;（隐藏占用空间）元素则不能被隐藏
+				$("div:hidden").show(); 
+				alert($("input:hidden").val()); 
+				$("div:visible").css("background","red"); 
+			});
+		</script>
+	</body>
+
+</html>
